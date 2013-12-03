@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+    <link href="css/google-font.css" rel='stylesheet' type='text/css'>
+    <link href="css/google-font2.css" rel='stylesheet' type='text/css'>
+    <link href="css/table.css" rel="stylessheet" type="text/css">
+</head>
+<body>
+     <div class="container-fluid">
+	<center><legend><h3>日志监控报告</h3></legend></center><br>
+
+ <h4 style="margin-left:8px;">触发统计</h4><br />
+<table class="table table-striped table-bordered table-condensed table-hover no-margin">
+    <thead>
+      <tr id="mytable">
+        <th>漏洞级别</th>
+        <th>触发数量</th>
+        <th>概述</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="mytable2">
+        <td><button class="btn btn-success btn-size" href="#">低危</button></td>
+        <td>100</td>
+        <td>
+	  风险定义为低危，该类漏洞对系统存在一定的风险。
+	</td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-warning" href="#">中危</button></td>
+        <td>200</td>
+        <td>
+	  风险定义为中危，该漏洞漏洞对系统存在较严重的威胁，攻击者利用该漏洞可能导致系统瘫痪或获得部分权限。
+	</td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-danger" href="#">高危</button></td>
+        <td>300</td>
+        <td>
+	  风险定义为高危，该漏洞一旦被攻击者利用，将会获得网站最高权限，甚至导致系统瘫痪。
+	</td>
+      </tr>
+    </tbody>
+  </table>
+ <h4 style="margin-left:8px;">漏洞统计TOP 10</h4><br />
+<table id="myTables" class="table table-striped table-bordered table-condensed table-hover no-margin">
+    <thead>
+      <tr>
+        <th>漏洞级别</th>
+        <th>漏洞名称</th>
+        <th>触发次数</th>
+	<th>漏洞介绍</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="label label-important">高危</span></td>
+        <td>SQL注入漏洞</td>
+        <td>32</td>
+	<td>SQL注入漏洞是攻击者利用数据库进行攻击。</td>
+      </tr>
+      <tr>
+        <td><span class="label label-warning">中危</span></td>
+        <td>敏感信息泄漏</td>
+        <td>60</td>
+        <td>敏感信息泄漏是攻击者利用数据库进行攻击。</td>
+      </tr>
+    </tbody>
+  </table>
+
+      
+</div>
+</body>
+</html>

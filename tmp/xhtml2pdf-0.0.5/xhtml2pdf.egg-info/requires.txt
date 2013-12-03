@@ -1,0 +1,4 @@
+html5lib
+pyPdf
+Pillow
+reportlab
