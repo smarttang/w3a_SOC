@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://192.168.31.71/bakup/';
+$config['base_url']	= 'http://192.168.31.168/w3a_System/';
 
 /*
 |--------------------------------------------------------------------------
