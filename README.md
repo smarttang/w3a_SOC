@@ -32,9 +32,14 @@ w3a System
 
 平台截图
 ===========================
-(https://raw.github.com/smarttang/w3a_System/master/image-folter/2000.png)
+
+程序主界面:
 
 <img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/w3a_System/master/image-folter/2000.png">
+
+规则页面:
+
+<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/w3a_System/master/image-folter/2001.png">
 
 代码编写原则
 ===========================
