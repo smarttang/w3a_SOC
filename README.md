@@ -32,7 +32,7 @@ w3a System
 
 平台截图
 ===========================
-	![image](https://github.com/smarttang/w3a_System/image-folter/2000.png)
+![image](https://github.com/smarttang/w3a_System/image-folter/2000.png)
 
 代码编写原则
 ===========================
