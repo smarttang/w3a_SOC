@@ -34,6 +34,8 @@ w3a System
 ===========================
 (https://raw.github.com/smarttang/w3a_System/master/image-folter/2000.png)
 
+<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/w3a_System/master/image-folter/2000.png">
+
 代码编写原则
 ===========================
 	-- 1)每个程序块开头必须写明该模块的意义。
