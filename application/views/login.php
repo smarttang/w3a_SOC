@@ -40,7 +40,6 @@
                 <h6><?=$header?></h6>
                 <input class="span12" name="username" type="text" placeholder="用户名">
                 <input class="span12" name="password" type="password" placeholder="密  码">
-                <input class="span7" name="code" type="text" placeholder="验证码" style="margin-left:-20px;"> <span><?=$cap['image']?></span>
                 <a href="#" class="forgot">忘记密码?</a>
                 <button id="buttion1id" class="btn-glow primary login" name="buttion1id">登录</a>
             </div>
