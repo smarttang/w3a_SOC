@@ -2,8 +2,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="<?=base_url().'/js/raphael-min.js'?>"></script>
-    <script src="<?=base_url().'/js/morris.min.js'?>"></script>
+    <script src="<?=base_url().'js/raphael-min.js'?>"></script>
+    <script src="<?=base_url().'js/morris.min.js'?>"></script>
 </head>
 <body>
 
@@ -258,7 +258,7 @@
 			k++;
 		    }
 		 }else if(item=='month'){
-		    for(var i=0;i<=<? echo date('t');?>;i++){
+		    for(var i=0;i<=12;i++){
                         web_attack.push([i,msg.web_attack[i]]);
                         net_attack.push([i,msg.net_attack[i]]);
                         data_time.push([i,msg.data_time[i]]);

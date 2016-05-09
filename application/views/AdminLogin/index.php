@@ -86,7 +86,7 @@
                 <span class="icon-bar"></span>
             </button>
             
-            <a class="brand" href="main.html"><img src="img/logo.png"></a>
+            <a class="brand" href="main.html">W3A SOC</a>
 
             <ul class="nav pull-right">                
                 <li class="notification-dropdown hidden-phone">
@@ -222,19 +222,19 @@
 	<!-- main container -->
 <div class="content" id="container-fluid"></div>
 	<!-- scripts -->
-    <script src="<?=base_url().'/js/jquery-latest.js'?>"></script>
-    <script src="<?=base_url().'/js/highcharts.src.js'?>"></script>
-    <script src="<?=base_url().'/js/exporting.js'?>"></script>
-    <script src="<?=base_url().'/js/bootstrap.min.js'?>"></script>
-    <script src="<?=base_url().'/js/jquery-ui-1.10.2.custom.min.js'?>"></script>
-    <script src="<?=base_url().'/js/bootstrap.datepicker.js'?>"></script>
+    <script src="<?=base_url().'js/jquery-latest.js'?>"></script>
+    <script src="<?=base_url().'js/highcharts.src.js'?>"></script>
+    <script src="<?=base_url().'js/exporting.js'?>"></script>
+    <script src="<?=base_url().'js/bootstrap.min.js'?>"></script>
+    <script src="<?=base_url().'js/jquery-ui-1.10.2.custom.min.js'?>"></script>
+    <script src="<?=base_url().'js/bootstrap.datepicker.js'?>"></script>
     <!-- knob -->
-    <script src="<?=base_url().'/js/jquery.knob.js'?>"></script>
+    <script src="<?=base_url().'js/jquery.knob.js'?>"></script>
     <!-- flot charts -->
-    <script src="<?=base_url().'/js/jquery.flot.js'?>"></script>
-    <script src="<?=base_url().'/js/jquery.flot.stack.js'?>"></script>
-    <script src="<?=base_url().'/js/jquery.flot.resize.js'?>"></script>
-    <script src="<?=base_url().'/js/theme.js'?>"></script>
+    <script src="<?=base_url().'js/jquery.flot.js'?>"></script>
+    <script src="<?=base_url().'js/jquery.flot.stack.js'?>"></script>
+    <script src="<?=base_url().'js/jquery.flot.resize.js'?>"></script>
+    <script src="<?=base_url().'js/theme.js'?>"></script>
     <!-- morrisjs -->
     <script type="text/javascript">
      function p_del() { 
