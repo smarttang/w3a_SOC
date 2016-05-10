@@ -8,9 +8,10 @@ w3a SOC
 
 最新log
 ==========
-1、诸位发现问题请直接提交issue，我会看,在空余时间会解决问题。
-2、关于开发、或者使用的问题，请翻看之前的issue，这个平台目前大部分针对有一定开发能力的人推广使用的。
-3、马上进行改版，老旧的问题会先放放，之前的一些bug在新版本将fix.
+
+	1、诸位发现问题请直接提交issue，我会看,在空余时间会解决问题。
+	2、关于开发、或者使用的问题，请翻看之前的issue，这个平台目前大部分针对有一定开发能力的人推广使用的。
+	3、马上进行改版，老旧的问题会先放放，之前的一些bug在新版本将fix.
 
 
 功能介绍
@@ -43,9 +44,9 @@ w3a SOC
 平台截图
 ===========================
 
-程序主界面:
+新版本程序主界面:
 
-<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/w3a_System/master/image-folter/2000.png">
+<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/w3a_System/master/newpic/EC31ED5A-D3FE-4581-A222-715D4C5A6239.png.png">
 
 规则页面:
 
