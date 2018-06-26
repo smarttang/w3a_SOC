@@ -24,7 +24,6 @@
   <style type="text/css">a:link,a:visited{text-decoration:none;  /*超链接无下划线*/} img {margin-top:-20px;}</style>
 
     <!-- open sans font -->
-    <link href="<?=base_url().'/font/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,600,700,800'?>" rel='stylesheet' type='text/css'>
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
