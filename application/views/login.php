@@ -47,6 +47,7 @@
         <div class="span4 no-account">
             <p>注册一个新用户?</p>
             <a href="signup.html">用户注册</a>
+            <p> 默认账号密码: admin/admin</p>
         </div>
     </div>
 
