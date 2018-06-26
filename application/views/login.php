@@ -1,9 +1,7 @@
 <html class="login-bg">
-
-<!-- Mirrored from detail.herokuapp.com/signin.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 02 Aug 2013 06:26:50 GMT -->
 <head>
 	<title>W3A 应用系统</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
     <link href="<?=base_url().'css/bootstrap/bootstrap.css'?>" rel="stylesheet">
@@ -55,14 +53,8 @@
     <script src="<?=base_url().'js/jquery-latest.js'?>"></script>
     <script src="<?=base_url().'js/bootstrap.min.js'?>"></script>
     <script src="<?=base_url().'js/theme.js'?>"></script>
-    <script type="text/javascript">
-	function abc(){
-		
-	}
-    </script>
 
 </body>
 
-<!-- Mirrored from detail.herokuapp.com/signin.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 02 Aug 2013 06:29:48 GMT -->
 </html>
 

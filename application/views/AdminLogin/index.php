@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-<!-- Mirrored from detail.herokuapp.com/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 02 Aug 2013 06:26:50 GMT -->
 <head>
         <title>W3a-Log 个人登录</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -291,6 +289,4 @@
     </script>
 
 </body>
-
-<!-- Mirrored from detail.herokuapp.com/index.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 02 Aug 2013 06:26:50 GMT -->
 </html>
