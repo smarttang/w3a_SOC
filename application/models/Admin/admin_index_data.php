@@ -42,6 +42,7 @@ class Admin_index_data extends CI_Model{
 	//查询历史数据综合(按年)
 	function select_json_year()
 	{
+		date_default_timezone_set('PRC');
 		$date_y=date('Y');
 		$year_data=array(
 				"$date_y-1",
