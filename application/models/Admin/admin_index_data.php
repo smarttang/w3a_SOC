@@ -211,8 +211,6 @@ class Admin_index_data extends CI_Model{
                 $data['net_attack']=$net_result;
                 $data['data_time']=$day_result;
                 return preg_replace("#\\\u([0-9a-f]{4})#ie", "iconv('UCS-2BE', 'UTF-8', pack('H4', '\\1'))", json_encode($data));
-
-
 	}
 
 	//web攻击统计
