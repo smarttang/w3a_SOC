@@ -40,11 +40,11 @@
 
 新版本程序主界面:
 
-<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.githubusercontent.com/smarttang/w3a_SOC/master/newpic/EC31ED5A-D3FE-4581-A222-715D4C5A6239.png">
+<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.githubusercontent.com/smarttang/w3a_SOC/dev/newpic/EC31ED5A-D3FE-4581-A222-715D4C5A6239.png">
 
 规则页面:
 
-<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/w3a_System/master/image-folter/2001.png">
+<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/w3a_System/dev/image-folter/2001.png">
 
 ### 备注
 
