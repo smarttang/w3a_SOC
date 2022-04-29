@@ -61,5 +61,5 @@
 - 预计5.1之后发布一个测试版本。
 
 
-<img style="max-width:50%;" title="Run example" alt="Run example" src="/newpic/wechat.png">
+<img title="Run example" alt="Run example" src="/newpic/wechat.png">
 
