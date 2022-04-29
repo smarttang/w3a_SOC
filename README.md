@@ -6,13 +6,14 @@
 基于应用网络监控、Web、系统日志审计一体化的平台。<br>
 </p>
     
-
 **主要特性**
-- 日志分析: 基于ES+GoLang的方式，对采集的Web和系统应用日志进行攻击行为的分析。
+- 日志分析: 基于kafka+GoLang的方式，对采集的Web和系统应用日志进行攻击行为的分析。
 - 篡改监控: 基于Golang开发的页面篡改监控。 
 - 业务连续性监控: 基于网络的业务连续性监控服务，确定业务是否有中断。
 - 告警整合: 实现钉钉、企业微信的联动告警机制。
 - 部署支持：docker-compose、Kubernetes。
+- 整体架构：基于 Filebeat(采集/清洗) + Kafka(汇聚) + ElasticSearch(检索)
+- 技术实现：后端基于Java，前端基于Vue，数据库基于MYSQL。
 
 **目标**
 - 满足等保二级、三级的需求，直接部署就能用那种。
@@ -40,11 +41,8 @@
 
 新版本程序主界面:
 
-<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.githubusercontent.com/smarttang/w3a_SOC/dev/newpic/EC31ED5A-D3FE-4581-A222-715D4C5A6239.png">
+<img style="max-width:100%;" title="Run example" alt="Run example" src="/newpic/EC31ED5A-D3FE-4581-A222-715D4C5A6239.png">
 
-规则页面:
-
-<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/w3a_System/dev/image-folter/2001.png">
 
 ### 备注
 
@@ -54,3 +52,12 @@
 - 诸位发现问题请直接提交issue，如果有定制化需求，麻烦支持下收费版本，在内部推动下元豚科技的产品啥的，感激不尽。
 - 项目元豚科技接管之后，起码不会荒废，只要公司一直在，项目就会更新。
 - 北京地区，找元豚科技做等级保护二、三级免费使用元豚旗下产品的商业版、社区版。
+- 旧的版本在old文件夹里，可以自行研究，但不建议生产环境使用了。
+
+### 客户体验计划
+
+- 欢迎种子用户，早期的种子用户后期可以优先体验商业版功能，欢迎扫码加我微信，我后面拉群。
+- 欢迎提意见和场景，我们想办法满足，如果有好的日志样本也可以提供给我们。
+
+<img style="max-width:100%;" title="Run example" alt="Run example" src="/newpic/wechat.png">
+
