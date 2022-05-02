@@ -109,6 +109,7 @@ Usage of ./bin/w3a-soc-agent:
 - 欢迎提意见和场景，我们想办法满足，如果有好的日志样本也可以提供给我们。
 - 预计5.1之后发布一个测试版本。
 
+### 加我
 
-<img title="Run example" alt="Run example" src="/newpic/wechat.png">
+<img style="width:200px" title="Run example" alt="Run example" src="/newpic/wechat.png">
 
