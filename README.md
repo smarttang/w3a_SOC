@@ -37,6 +37,55 @@
 - 针对出现的问题，统一告警输出。
 - 支持钉钉、企业微信。
 
+### 部署文档
+
+#### 非容器化部署（针对虚拟机、云服务器部署）
+
+**清单**
+- 后端：backend（w3a-dashboard-service-v1.jar, w3a-openapi-service-v1.jar）
+- 工具端：tools（w3a-soc-agent [日志审计]）
+- 前端：frontend (dist)
+- 自备JavaJDK环境、Nginx、Kafka、Elasticsearch、Redis
+- 针对Java端两个服务部署参考：（守护进程自己解决哈）
+```shell
+    java -Dspring.datasource.url="jdbc:mysql://[mysql的地址]:[端口]/w3a_soc?characterEncoding=utf-8&useSSL=false" \
+        -Dspring.datasource.username=[数据库账号] \
+        -Dspring.datasource.password=[数据库密码] \
+        -Dspring.redis.host=[redis的地址] \
+        -Dspring.redis.port=[redis端口] \
+        -jar w3a-dashboard-service-v1.jar
+```
+- 针对工具端：（topic取决于你的采集器、kafka地址、端口自己部署配置，守护进程自己解决哈）
+```shell
+➜  w3a-soc-agent ./bin/w3a-soc-agent -h
+Usage of ./bin/w3a-soc-agent:
+  -A string
+        日志归一的kafka的地址:端口,可以多个,以','分割,默认: kafka:9092 (default "kafka:9092")
+  -T string
+        日志归一的kafka的Topic名称,默认: weblogs (default "weblogs")
+```
+
+#### 容器化部署（针对ECS、CVM、本地、云主机等，docker-compose方式）
+
+**步骤**
+- 我都写好了，不需要你做啥，直接一键部署启动就行。
+- 建议自己开台虚拟机，然后安装好docker-compose就行，其它不用干别的。
+- 尽量不要乱动，我更新的时候会修改里面的镜像版本，每次你pull完代码之后，重新docker-compose起来的时候，都是用的最新的镜像。
+
+```shell
+  cd deploy/docker-compose/simple/
+  docker-compose up -d
+```
+
+#### K8S部署（针对容器集群）
+**步骤**
+- 我都写好了，不需要你做啥，直接一键部署启动就行。
+- 或者直接把Yaml贴到集群配置导入就行。
+
+```shell
+   kubectl create -f deploy/kubernetes/
+```
+
 ### DEMO
 
 新版本程序主界面:
