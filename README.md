@@ -5,7 +5,17 @@
 <p align="center">
 基于应用网络监控、Web、系统日志审计一体化的平台。<br>
 </p>
-    
+
+![](https://img.shields.io/badge/golang-1.17.2%20-green)
+![](https://img.shields.io/badge/openjdk-15.0.5-green)
+![](https://img.shields.io/badge/W3A%20SOC-v2.0-green)
+![](https://img.shields.io/badge/%E7%AD%89%E7%BA%A7%E4%BF%9D%E6%8A%A4%E4%B8%89%E7%BA%A7-%E6%97%A5%E5%BF%97%E5%AE%A1%E8%AE%A1-green)
+![](https://img.shields.io/badge/%E5%91%8A%E8%AD%A6%E7%9B%91%E6%8E%A7-%E9%92%89%E9%92%89-green)
+![](https://img.shields.io/badge/%E5%91%8A%E8%AD%A6%E7%9B%91%E6%8E%A7-%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1-green)
+![](https://img.shields.io/badge/Kubernetes-1.20.6-green)
+![](https://img.shields.io/badge/%20docker--compose-1.29.2-green)
+
+
 **主要特性**
 - 日志分析: 基于kafka+GoLang的方式，对采集的Web和系统应用日志进行攻击行为的分析。
 - 篡改监控: 基于Golang开发的页面篡改监控。 
@@ -101,7 +111,7 @@ Usage of ./bin/w3a-soc-agent:
 - 诸位发现问题请直接提交issue，如果有定制化需求，麻烦支持下收费版本，在内部推动下元豚科技的产品啥的，感激不尽。
 - 项目元豚科技接管之后，起码不会荒废，只要公司一直在，项目就会更新。
 - 北京地区，找元豚科技做等级保护二、三级免费使用元豚旗下产品的商业版、社区版。
-- 旧的版本在old文件夹里，可以自行研究，但不建议生产环境使用了。
+- 旧的版本在release，那个版本是开源的，代码开放，有需要自行提取。
 
 ### 客户体验计划
 
