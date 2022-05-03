@@ -1,0 +1,22 @@
+filebeat.inputs:
+- type: kafka
+  enabled: true
+  hosts: ["kafka:9092"]
+  topics: ["weblogs"]
+  group_id: "weblogs"
+
+  json.keys_under_root: true
+  json.add_error_key: true
+  json.overwrite_keys: true
+
+output.elasticsearch:
+   hosts: ["elasticsearch:9200"]
+   index: "weblog-%{+yyyy.MM.dd}"
+setup.template.name: "filebeattest"
+setup.template.pattern: "filebeattest-*"
+#   username: "elastic"
+#   password: "changeme"
+#setup.kibana:
+#  host: "http://kibana:5601"
+#  username: "elastic"
+#  password: "changeme"

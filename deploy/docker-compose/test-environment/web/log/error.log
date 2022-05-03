@@ -1,0 +1,30 @@
+2022/05/02 14:11:30 [error] 71#71: *1 open() "/opt/bitnami/nginx/html/dedededdafawf/dede1111" failed (2: No such file or directory), client: 172.19.0.1, server: api.example.com, request: "POST /dedededdafawf/dede1111 HTTP/1.1", host: "127.0.0.1"
+2022/05/03 07:22:09 [emerg] 50#50: unknown log format "nginxlog_json" in /usr/local/openresty/nginx/conf/nginx.conf:67
+2022/05/03 07:24:09 [emerg] 1#1: mkdir() "/opt/bitnami/nginx/tmp/client_body" failed (2: No such file or directory)
+2022/05/03 07:29:47 [error] 7#7: *3 open() "/usr/local/openresty/nginx/html/dede/indx" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /dede/indx HTTP/1.1", host: "127.0.0.1"
+2022/05/03 07:45:56 [error] 9#9: *1 open() "/usr/local/openresty/nginx/html/dede/indx" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /dede/indx HTTP/1.1", host: "127.0.0.1"
+2022/05/03 07:45:58 [error] 9#9: *2 open() "/usr/local/openresty/nginx/html/dede/indx" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /dede/indx HTTP/1.1", host: "127.0.0.1"
+2022/05/03 07:46:18 [error] 9#9: *3 open() "/usr/local/openresty/nginx/html/dede/indx" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /dede/indx HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:04:36 [emerg] 1#1: "client_body_buffer_size" directive is duplicate in /usr/local/openresty/nginx/conf/nginx.conf:31
+2022/05/03 08:10:29 [error] 9#9: *1 open() "/usr/local/openresty/nginx/html/dede" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "GET /dede HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:10:33 [error] 9#9: *2 open() "/usr/local/openresty/nginx/html/dede" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /dede HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:13:37 [error] 12#12: *2 open() "/usr/local/openresty/nginx/html/deded" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /deded HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:23:14 [error] 12#12: *3 open() "/usr/local/openresty/nginx/html/deded" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /deded HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:23:44 [emerg] 1#1: "daemon" directive is duplicate in /usr/local/openresty/nginx/conf/nginx.conf:2
+2022/05/03 08:24:38 [emerg] 1#1: "daemon" directive is duplicate in /usr/local/openresty/nginx/conf/nginx.conf:2
+2022/05/03 08:27:38 [emerg] 1#1: "echo_read_request_body" directive is not allowed here in /usr/local/openresty/nginx/conf/nginx.conf:16
+2022/05/03 08:31:50 [emerg] 1#1: invalid number of arguments in "proxy_pass" directive in /usr/local/openresty/nginx/conf/nginx.conf:52
+2022/05/03 08:37:58 [emerg] 1#1: "fastcgi_buffers" directive is duplicate in /usr/local/openresty/nginx/conf/nginx.conf:30
+2022/05/03 08:41:56 [error] 10#10: *1 open() "/usr/local/openresty/nginx/html/deded" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /deded HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:42:13 [error] 10#10: *2 open() "/usr/local/openresty/nginx/html/deded" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /deded HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:46:08 [alert] 8#8: *1319 1024 worker_connections are not enough while connecting to upstream, client: 127.0.0.1, server: api.example.com, request: "POST /deded HTTP/1.0", upstream: "http://127.0.0.1:8080/deded", host: "127.0.0.1:8080"
+2022/05/03 08:52:02 [alert] 8#8: *2484 1024 worker_connections are not enough while connecting to upstream, client: 127.0.0.1, server: api.example.com, request: "POST /deded HTTP/1.0", upstream: "http://127.0.0.1:8080/deded", host: "127.0.0.1:8080"
+2022/05/03 08:53:22 [alert] 9#9: *1255 1024 worker_connections are not enough while connecting to upstream, client: 127.0.0.1, server: api.example.com, request: "POST /deded HTTP/1.0", upstream: "http://127.0.0.1:8080/deded", host: "127.0.0.1:8080"
+2022/05/03 08:53:52 [alert] 9#9: *2608 1024 worker_connections are not enough while connecting to upstream, client: 127.0.0.1, server: api.example.com, request: "POST /deded HTTP/1.0", upstream: "http://127.0.0.1:8080/deded", host: "127.0.0.1:8080"
+2022/05/03 08:53:58 [alert] 10#10: *1417 1024 worker_connections are not enough while connecting to upstream, client: 127.0.0.1, server: api.example.com, request: "POST /deded HTTP/1.0", upstream: "http://127.0.0.1:8080/deded", host: "127.0.0.1:8080"
+2022/05/03 08:54:14 [error] 7#7: *1 open() "/usr/local/openresty/nginx/html/deded" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /deded HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:54:58 [error] 9#9: *1 open() "/usr/local/openresty/nginx/html/deded" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /deded HTTP/1.1", host: "127.0.0.1"
+2022/05/03 08:55:27 [error] 9#9: *2 open() "/usr/local/openresty/nginx/html/deded" failed (2: No such file or directory), client: 172.22.0.1, server: api.example.com, request: "POST /deded HTTP/1.1", host: "127.0.0.1"
+2022/05/03 09:05:27 [alert] 10#10: *1439 1024 worker_connections are not enough while connecting to upstream, client: 127.0.0.1, server: api.example.com, request: "POST /deded HTTP/1.0", upstream: "http://127.0.0.1:8080/deded", host: "127.0.0.1:8080"
+2022/05/03 09:05:30 [alert] 10#10: *2736 1024 worker_connections are not enough while connecting to upstream, client: 127.0.0.1, server: api.example.com, request: "POST /deded HTTP/1.0", upstream: "http://127.0.0.1:8080/deded", host: "127.0.0.1:8080"
+2022/05/03 09:05:55 [emerg] 1#1: invalid URL prefix in /usr/local/openresty/nginx/conf/nginx.conf:51
