@@ -5,7 +5,17 @@
 <p align="center">
 基于应用网络监控、Web、系统日志审计一体化的平台。<br>
 </p>
-    
+
+![](https://img.shields.io/badge/golang-1.17.2%20-green)
+![](https://img.shields.io/badge/openjdk-15.0.5-green)
+![](https://img.shields.io/badge/W3A%20SOC-v2.0-green)
+![](https://img.shields.io/badge/%E7%AD%89%E7%BA%A7%E4%BF%9D%E6%8A%A4%E4%B8%89%E7%BA%A7-%E6%97%A5%E5%BF%97%E5%AE%A1%E8%AE%A1-green)
+![](https://img.shields.io/badge/%E5%91%8A%E8%AD%A6%E7%9B%91%E6%8E%A7-%E9%92%89%E9%92%89-green)
+![](https://img.shields.io/badge/%E5%91%8A%E8%AD%A6%E7%9B%91%E6%8E%A7-%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1-green)
+![](https://img.shields.io/badge/Kubernetes-1.20.6-green)
+![](https://img.shields.io/badge/%20docker--compose-1.29.2-green)
+
+
 **主要特性**
 - 日志分析: 基于kafka+GoLang的方式，对采集的Web和系统应用日志进行攻击行为的分析。
 - 篡改监控: 基于Golang开发的页面篡改监控。 
