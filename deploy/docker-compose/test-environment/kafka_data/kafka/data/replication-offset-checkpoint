@@ -21,7 +21,7 @@ __consumer_offsets 3 0
 __consumer_offsets 40 0
 __consumer_offsets 27 0
 __consumer_offsets 17 0
-weblogs 0 4647
+weblogs 0 4318
 __consumer_offsets 39 0
 __consumer_offsets 2 0
 __consumer_offsets 44 0
@@ -44,7 +44,7 @@ __consumer_offsets 42 0
 __consumer_offsets 28 0
 __consumer_offsets 4 0
 __consumer_offsets 31 0
-__consumer_offsets 5 28
+__consumer_offsets 5 198
 __consumer_offsets 1 0
 __consumer_offsets 15 0
 __consumer_offsets 38 0

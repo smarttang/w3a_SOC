@@ -98,9 +98,21 @@ Usage of ./bin/w3a-soc-agent:
 
 ### DEMO
 
-新版本程序主界面:
+应用管理界面:(新版，以应用作为中心)
 
-<img style="max-width:100%;" title="Run example" alt="Run example" src="/newpic/EC31ED5A-D3FE-4581-A222-715D4C5A6239.png">
+<img style="max-width:100%;" title="Run example" alt="Run example" src="/newpic/main.png">
+
+大盘主界面:
+
+<img style="max-width:100%;" title="Run example" alt="Run example" src="/newpic/dashboard.png">
+
+规则管理主界面：
+
+<img style="max-width:100%;" title="Run example" alt="Run example" src="/newpic/rules.png">
+
+Web访问日志界面:
+
+<img style="max-width:100%;" title="Run example" alt="Run example" src="/newpic/web.png">
 
 
 ### 备注
