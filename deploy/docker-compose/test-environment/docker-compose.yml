@@ -80,4 +80,8 @@ services:
       ELASTICSEARCH_URL: http://elasticsearch:9200
 
   w3aAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v4
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v5
+    environment:
+      - topic=weblogs
+      - kafka=kafka:9092
+      - openapi=w3aOpenApi
