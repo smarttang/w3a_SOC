@@ -1,10 +1,8 @@
 /*
  Navicat MySQL Data Transfer
 
- Source Server         : 152.136.124.182-新库
  Source Server Type    : MariaDB
  Source Server Version : 50568
- Source Host           : 152.136.124.182:3306
  Source Schema         : w3a_soc
 
  Target Server Type    : MariaDB
