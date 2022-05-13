@@ -79,9 +79,70 @@ services:
     environment:
       ELASTICSEARCH_URL: http://elasticsearch:9200
 
+  # 分析端
   w3aAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v5
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v6
     environment:
       - topic=weblogs
       - kafka=kafka:9092
-      - openapi=w3aOpenApi
+      - openapi=w3aOpenApi:8082
+      - modes=analyze
+
+  # Web前端
+  w3aFrotend:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1
+    ports:
+     - '81:80'
+    depends_on:
+      - w3aDashboard
+
+  # 后端
+  w3aDashboard:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1
+    ports:
+     - '8081:8080'
+    environment:
+      - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=testw3a
+      - REDIS_HOST=w3aRedis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=5
+    depends_on:
+      - w3aMysql
+      - w3aRedis
+
+  # openAPI
+  w3aOpenApi:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1
+    ports:
+     - '8082:8080'
+    environment:
+      - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=testw3a
+      - REDIS_HOST=w3aRedis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=4
+    depends_on:
+      - kafka
+    depends_on:
+      - w3aMysql
+      - w3aRedis
+
+  # mysql
+  w3aMysql:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/mysql:v1
+    volumes:
+     - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+     - '3306:3306'
+    environment:
+     - MYSQL_ROOT_PASSWORD=testw3a
+
+  # redis
+  w3aRedis:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/redis:v1
+    ports:
+     - '6379:6379'
+
