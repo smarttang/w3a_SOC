@@ -26,8 +26,8 @@ services:
     image: docker.io/bitnami/zookeeper:3.8
     ports:
       - "2181:2181"
-    volumes:
-      - "./zookeeper_data:/bitnami"
+#    volumes:
+#      - "./zookeeper_data:/bitnami"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
   kafka:
@@ -35,8 +35,8 @@ services:
     ports:
       - "29092:29092"
       - "9092:9092"
-    volumes:
-      - "./kafka_data:/bitnami"
+#    volumes:
+#      - "./kafka_data:/bitnami"
     environment:
       - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
       - ALLOW_PLAINTEXT_LISTENER=yes
@@ -68,8 +68,8 @@ services:
       - xpack.security.enabled=false
       - xpack.security.transport.ssl.enabled=false
       - "ES_JAVA_OPTS=-Xms512m -Xmx2g"
-    volumes:
-      - './esdata:/bitnami/elasticsearch/data'
+#    volumes:
+#      - './esdata:/bitnami/elasticsearch/data'
 
   #用于debug用
   kibana:
