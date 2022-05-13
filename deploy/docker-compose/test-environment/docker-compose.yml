@@ -88,6 +88,15 @@ services:
       - openapi=w3aopenapi:8080
       - modes=analyze
 
+  # 告警端
+  w3aAlterAgent:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v18
+    environment:
+      - topic=weblogs
+      - kafka=kafka:9092
+      - openapi=w3aopenapi:8080
+      - modes=alters
+
   # Web前端
   w3aFrotend:
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v4
