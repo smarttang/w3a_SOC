@@ -118,12 +118,6 @@ CREATE TABLE `w3_users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
--- 创建测试账号密码
--- ----------------------------
-INSERT INTO w3_users(user_name,user_password,user_createtime)values('admin','385ba8ba360a0efbf17c93784323f655', now());
--- ----------------------------
-
--- ----------------------------
 -- Table structure for w3_vuls_circulation
 -- ----------------------------
 DROP TABLE IF EXISTS `w3_vuls_circulation`;
@@ -183,7 +177,7 @@ CREATE TABLE `w3_web_attack_rules` (
   `rules_updatetime` datetime DEFAULT NULL COMMENT '更新时间',
   `rules_status` tinyint(1) DEFAULT '0' COMMENT '规则状态,0：待启用，1：启用，2：禁用，3：异常',
   `rules_delete` tinyint(1) DEFAULT '1' COMMENT '逻辑删除状态,0：已删除，1：启用',
-  `rules_regex` varchar(255) NOT NULL COMMENT '规则内容',
+  `rules_regex` longtext NOT NULL COMMENT '规则内容',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='web检测规则';
 
@@ -266,5 +260,36 @@ CREATE TABLE `w3_website_service` (
   `website_updatetime` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`,`website_types`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='站点管理.服务配置';
+
+
+/**
+ * 初始化数据
+ */
+-- ----------------------------
+-- 创建测试账号密码
+-- ----------------------------
+INSERT INTO `w3a_soc`.`w3_users`(`user_name`,`user_password`,`user_createtime`)VALUES('admin','385ba8ba360a0efbf17c93784323f655', now());
+-- ----------------------------
+-- ----------------------------
+-- 创建统计数据
+-- ----------------------------
+INSERT INTO `w3a_soc`.`w3_statistics`(`id`, `statis_uptime`, `statis_type`, `statis_counts`) VALUES (1, NULL, 0, 0);
+INSERT INTO `w3a_soc`.`w3_statistics`(`id`, `statis_uptime`, `statis_type`, `statis_counts`) VALUES (2, NULL, 1, 0);
+INSERT INTO `w3a_soc`.`w3_statistics`(`id`, `statis_uptime`, `statis_type`, `statis_counts`) VALUES (3, NULL, 2, 0);
+INSERT INTO `w3a_soc`.`w3_statistics`(`id`, `statis_uptime`, `statis_type`, `statis_counts`) VALUES (4, NULL, 3, 0);
+-- ----------------------------
+-- 创建测试规则数据
+-- ----------------------------
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (1, 'SQL注入-探测', 2, 0, now(), NULL, 1, 1, 'KD9pKShhbmR8b3IpKC4qKVxkPVxk');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (2, 'PHP敏感目录扫描', 0, 0, now(), NULL, 1, 1, 'KD9pKSh3cC1sb2dpbnxjbWR8YWRtaW58cGhwaW5mbylcLnBocA==');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (3, '链路跟踪探针探测', 0, 0, now(), NULL, 1, 1, 'KD9pKSh0cmFjZXx0cmFjZWluZyk=');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (4, 'SQL注入-UNION', 2, 0, now(), NULL, 1, 1, 'KC4qKSg/aSkodW5pb24pKC4qKSg/aSkoc2VsZWN0KQ==');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (5, 'composer文件泄露探测', 0, 0, now(), NULL, 1, 1, 'KD9pKVwuKGNvbXBvc2VyXC9jb21wb3NlclwuanNvbik=');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (6, 'Jira版本探测', 0, 0, now(), NULL, 1, 1, 'XC8oP2kpc2VjdXJlXC8oP2kpRGFzaGJvYXJkXC5qc3Bh');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (7, '后门地址', 1, 0, now(), NULL, 1, 1, 'KD9pKShjbWR8YmFja2Rvb3J8MXx0ZXN0fHBocGluZm98cGhwfGpzcClcLihwaHB8anNwfGFzcHh8YXNwKQ==');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (8, '本地文件包含', 2, 0, now(), NULL, 1, 1, 'XC8oP2kpKGV0Y3xwYXNzd2R8d2luZG93c1wvd2luKQ==');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (9, '远程命令执行', 2, 0, now(), NULL, 1, 1, 'KD9pKShkZWZpbmV8ZXZhbHxmaWxlX2dldF9jb250ZW50c3xpbmNsdWRlfHJlcXVpcmV8cmVxdWlyZV9vbmNlfHNoZWxsX2V4ZWN8cGhwaW5mb3xzeXN0ZW18cGFzc3RocnV8Y2hhcnxjaHJ8ZXhlY3V0ZXxlY2hvfHByaW50fHByaW50X3J8dmFyX2R1bXB8b3BlbikoLiop');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (10, '弱口令探测', 2, 0, now(), NULL, 1, 1, 'KD9pKShwYXNzd29yZHxwYXNzfHBhc3N3ZHxwd2R8cGR8dXNlcnB3ZHx1c2VycGFzc3x1c2VycGFzc3dkfHVzZXJwYXNzd29yZHxwYXNzX3dvcmR8dXNlcl9wYXNzd29yZHx1c2VyX3Bhc3MpXD0oP2kpKGFkbWlufGFkbWluMTIzfGFkbWluMTIzNDU2fDEyMzQ1NnxhZG1pbjg4OHxhZG1pbjg4ODh8dGVzdHwxMjM0fDEyM3x0ZXN0MTIzKQ==');
+INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (11, 'XSS跨站脚本攻击', 2, 0, now(), NULL, 1, 1, 'XDwoP2kpc2NyaXB0XD4oP2kpYWxlcnRcKCguKilcKVw8XC8oP2kpc2NyaXB0XD4=');
 
 SET FOREIGN_KEY_CHECKS = 1;
