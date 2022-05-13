@@ -99,7 +99,7 @@ services:
 
   # Web前端
   w3aFrotend:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v4
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v5
     ports:
      - '81:80'
     depends_on:
