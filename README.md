@@ -114,6 +114,9 @@ Web访问日志界面:
 
 <img style="max-width:100%;" title="Run example" alt="Run example" src="/newpic/web.png">
 
+攻击详情页面:
+
+<img style="max-width:100%;" title="RUN" alt="RUN" src="/newpic/attack.png">
 
 ### 备注
 
