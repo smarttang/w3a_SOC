@@ -26,8 +26,8 @@ services:
     image: docker.io/bitnami/zookeeper:3.8
     ports:
       - "2181:2181"
-    volumes:
-      - "./zookeeper_data:/bitnami"
+#    volumes:
+#      - "./zookeeper_data:/bitnami"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
   kafka:
@@ -35,8 +35,8 @@ services:
     ports:
       - "29092:29092"
       - "9092:9092"
-    volumes:
-      - "./kafka_data:/bitnami"
+#    volumes:
+#      - "./kafka_data:/bitnami"
     environment:
       - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
       - ALLOW_PLAINTEXT_LISTENER=yes
@@ -68,8 +68,8 @@ services:
       - xpack.security.enabled=false
       - xpack.security.transport.ssl.enabled=false
       - "ES_JAVA_OPTS=-Xms512m -Xmx2g"
-    volumes:
-      - './esdata:/bitnami/elasticsearch/data'
+#    volumes:
+#      - './esdata:/bitnami/elasticsearch/data'
 
   #用于debug用
   kibana:
@@ -79,9 +79,70 @@ services:
     environment:
       ELASTICSEARCH_URL: http://elasticsearch:9200
 
+  # 分析端
   w3aAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v5
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v18
     environment:
       - topic=weblogs
       - kafka=kafka:9092
-      - openapi=w3aOpenApi
+      - openapi=w3aopenapi:8080
+      - modes=analyze
+
+  # Web前端
+  w3aFrotend:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v4
+    ports:
+     - '81:80'
+    depends_on:
+      - w3aDashboard
+
+  # 后端
+  w3aDashboard:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v4
+    ports:
+     - '8081:8080'
+    environment:
+      - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=testw3a
+      - REDIS_HOST=w3aRedis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=5
+    depends_on:
+      - w3aMysql
+      - w3aRedis
+
+  # openAPI
+  w3aopenapi:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v4
+    ports:
+     - '8082:8080'
+    environment:
+      - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=testw3a
+      - REDIS_HOST=w3aRedis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=4
+    depends_on:
+      - kafka
+    depends_on:
+      - w3aMysql
+      - w3aRedis
+
+  # mysql
+  w3aMysql:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/mysql:v1
+    volumes:
+     - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+     - '3306:3306'
+    environment:
+     - MYSQL_ROOT_PASSWORD=testw3a
+
+  # redis
+  w3aRedis:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/redis:v1
+    ports:
+     - '6379:6379'
+
