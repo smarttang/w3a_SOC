@@ -118,6 +118,12 @@ CREATE TABLE `w3_users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
+-- 创建测试账号密码
+-- ----------------------------
+INSERT INTO w3_users(user_name,user_password,user_createtime)values('admin','385ba8ba360a0efbf17c93784323f655', now());
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for w3_vuls_circulation
 -- ----------------------------
 DROP TABLE IF EXISTS `w3_vuls_circulation`;
