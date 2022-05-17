@@ -19,6 +19,7 @@
 **主要特性**
 - 日志分析: 基于kafka+GoLang的方式，对采集的Web和系统应用日志进行攻击行为的分析。
 - 篡改监控: 基于Golang开发的页面篡改监控。 
+- 漏洞管理：在线托管所有漏洞，可以用于打通内部工作流的汇聚。
 - 业务连续性监控: 基于网络的业务连续性监控服务，确定业务是否有中断。
 - 告警整合: 实现钉钉、企业微信的联动告警机制。
 - 部署支持：docker-compose、Kubernetes。
@@ -30,71 +31,9 @@
 - 让客户少花钱，然后也能用，不串联到业务中，对业务0影响。
 - 部署简单，一键部署，或者直接随着元豚科技生态自动部署。
 
-### 关键能力细节
-
-**Web日志分析**
-- 通过Logstash/filebeat采集日志到ES上。
-- Golang通过开放平台，获取规则信息针对Kafka的日志进行实时分析。
-- 将存在问题的部分直接存到平台里，平台只存落地的攻击日志、记录分析日志数。
-- 攻击源IP地址分析，结合IP来源进行分析。
-- 输出可以用于封禁的API接口，查可封禁的IP。
-
-**存活监控/篡改监控告警**
-- 针对提交的IP进行检测，看是否存活，可以分布式，持续的监测。
-- 针对目标进行篡改监控。
-
-**问题告警**
-- 针对出现的问题，统一告警输出。
-- 支持钉钉、企业微信。
-
 ### 部署文档
 
-#### 非容器化部署（针对虚拟机、云服务器部署）
-
-**清单**
-- 后端：backend（w3a-dashboard-service-v1.jar, w3a-openapi-service-v1.jar）
-- 工具端：tools（w3a-soc-agent [日志审计]）
-- 前端：frontend (dist)
-- 自备JavaJDK环境、Nginx、Kafka、Elasticsearch、Redis
-- 针对Java端两个服务部署参考：（守护进程自己解决哈）
-```shell
-    java -Dspring.datasource.url="jdbc:mysql://[mysql的地址]:[端口]/w3a_soc?characterEncoding=utf-8&useSSL=false" \
-        -Dspring.datasource.username=[数据库账号] \
-        -Dspring.datasource.password=[数据库密码] \
-        -Dspring.redis.host=[redis的地址] \
-        -Dspring.redis.port=[redis端口] \
-        -jar w3a-dashboard-service-v1.jar
-```
-- 针对工具端：（topic取决于你的采集器、kafka地址、端口自己部署配置，守护进程自己解决哈）
-```shell
-➜  w3a-soc-agent ./bin/w3a-soc-agent -h
-Usage of ./bin/w3a-soc-agent:
-  -A string
-        日志归一的kafka的地址:端口,可以多个,以','分割,默认: kafka:9092 (default "kafka:9092")
-  -T string
-        日志归一的kafka的Topic名称,默认: weblogs (default "weblogs")
-```
-
-#### 容器化部署（针对ECS、CVM、本地、云主机等，docker-compose方式）
-
-**步骤**
-- 我都写好了，不需要你做啥，直接一键部署启动就行。
-- 建议自己开台虚拟机，然后安装好docker-compose就行，其它不用干别的。
-- 尽量不要乱动，我更新的时候会修改里面的镜像版本，每次你pull完代码之后，重新docker-compose起来的时候，都是用的最新的镜像。
-
-```shell
-  cd deploy/docker-compose/simple/
-  docker-compose up -d
-```
-
-#### K8S部署（针对容器集群）
-**步骤**
-- 我都写好了，不需要你做啥，直接一键部署启动就行。
-- 或者直接把Yaml贴到集群配置导入就行。
-
-```shell
-   kubectl create -f deploy/kubernetes/
-```
+参考在线文档：http://w3asoc.aidolphins.com/
 
 ### DEMO
 
