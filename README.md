@@ -1,8 +1,5 @@
 
-
-# W3A SOC
-
-<img style="width:660px" title="Run example" alt="Run example" src="/WechatIMG204 .png">
+<center><img style="width:660px" title="Run example" alt="Run example" src="/WechatIMG204 .png"></center>
 
 <p align="center">
 基于应用网络监控、Web、系统日志审计一体化的平台。<br>
