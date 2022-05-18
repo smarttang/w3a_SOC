@@ -81,7 +81,7 @@ services:
 
   # 分析端
   w3aAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v18
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.8
     environment:
       - topic=weblogs
       - kafka=kafka:9092
@@ -90,7 +90,7 @@ services:
 
   # 告警端
   w3aAlterAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v18
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.8
     environment:
       - topic=weblogs
       - kafka=kafka:9092
@@ -99,7 +99,7 @@ services:
 
   # Web前端
   w3aFrotend:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v5
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1.0.8
     ports:
      - '81:80'
     depends_on:
@@ -107,7 +107,7 @@ services:
 
   # 后端
   w3aDashboard:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v5
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1.0.8
     ports:
      - '8081:8080'
     environment:
@@ -128,7 +128,7 @@ services:
 
   # openAPI
   w3aopenapi:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v5
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1.0.8
     ports:
      - '8082:8080'
     environment:
