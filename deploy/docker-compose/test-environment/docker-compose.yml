@@ -80,34 +80,34 @@ services:
       ELASTICSEARCH_URL: http://elasticsearch:9200
 
   # 分析端
-  w3aAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.8
+  w3aAnalysisAgent:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.9
     environment:
       - topic=weblogs
       - kafka=kafka:9092
-      - openapi=w3aopenapi:8080
+      - openapi=w3aworkapi:8080
       - modes=analyze
 
   # 告警端
   w3aAlterAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.8
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.9
     environment:
       - topic=weblogs
       - kafka=kafka:9092
-      - openapi=w3aopenapi:8080
+      - openapi=w3aworkapi:8080
       - modes=alters
 
   # Web前端
   w3aFrotend:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1.0.8
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1.0.9
     ports:
      - '81:80'
     depends_on:
       - w3aDashboard
 
-  # 后端
+  # 平台侧
   w3aDashboard:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1.0.8
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1.0.9
     ports:
      - '8081:8080'
     environment:
@@ -117,20 +117,38 @@ services:
       - REDIS_HOST=w3aRedis
       - REDIS_PORT=6379
       - REDIS_DATABASE=5
-     # - COS_ACCESSKEY=[自己的accessKeyId]
-     # - COS_SECRETKEY=[自己的secretkey]
-     # - COS_REGIONNAME=[对应cos的地区]
-     # - COS_BUCKETNAME=[bucket]
-     # - COS_BASEURL=[具体的cos的主地址，记得要带上https://]
+      - COS_ACCESSKEY=XXXX
+      - COS_SECRETKEY=XXXXX
+      - COS_REGIONNAME=XXXXX
+      - COS_BUCKETNAME=XXXXX
+      - COS_BASEURL=https://XXXXX.cos.XXXXX.myqcloud.com
+    depends_on:
+      - w3aMysql
+      - w3aRedis
+
+  # workAPI
+  w3aworkapi:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-workapi:v1.0.9
+    ports:
+     - '8082:8080'
+    environment:
+      - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=testw3a
+      - REDIS_HOST=w3aRedis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=4
+    depends_on:
+      - kafka
     depends_on:
       - w3aMysql
       - w3aRedis
 
   # openAPI
   w3aopenapi:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1.0.8
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1.0.9
     ports:
-     - '8082:8080'
+     - '8083:8080'
     environment:
       - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
       - MYSQL_USERNAME=root
@@ -159,4 +177,3 @@ services:
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/redis:v1
     ports:
      - '6379:6379'
-
