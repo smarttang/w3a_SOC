@@ -72,5 +72,5 @@ Web访问日志界面:
 
 ### 加我
 
-<img style="width:200px" title="Run example" alt="Run example" src="/newpic/wechat.png">
+<img style="width:200px" title="Run example" alt="Run example" src="/WechatIMG211.jpeg">
 
