@@ -70,7 +70,7 @@ Web访问日志界面:
 - 欢迎种子用户，早期的种子用户后期可以优先体验商业版功能，欢迎扫码加我微信，我后面拉群。
 - 欢迎提意见和场景，我们想办法满足，如果有好的日志样本也可以提供给我们。
 
-### 加我
+### 欢迎加群
 
 <img style="width:200px" title="Run example" alt="Run example" src="/WechatIMG211.jpeg">
 
