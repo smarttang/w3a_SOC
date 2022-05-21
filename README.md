@@ -2,7 +2,7 @@
 <p align="center"><img style="width:660px" title="Run example" alt="Run example" src="/WechatIMG204 .png"></p>
 
 <p align="center">
-基于应用网络监控、Web、系统日志审计一体化的平台。<br>
+基于云原生应用、网络监控、Web、系统日志审计，安全运维一体化工作台。<br>
 </p>
 
 ![](https://img.shields.io/badge/golang-1.17.2%20-green)
