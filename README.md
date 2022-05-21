@@ -2,7 +2,7 @@
 <p align="center"><img style="width:660px" title="Run example" alt="Run example" src="/WechatIMG204 .png"></p>
 
 <p align="center">
-基于云原生应用、网络监控、Web、系统日志审计，安全运维一体化工作台。<br>
+元豚科技 - 基于日志安全分析做切入，做最好用的「云原生安全运维工作台」<br>
 </p>
 
 ![](https://img.shields.io/badge/golang-1.17.2%20-green)
