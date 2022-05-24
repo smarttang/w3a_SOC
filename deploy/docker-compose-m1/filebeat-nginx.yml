@@ -1,0 +1,14 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  fields:
+    source: nginx_access_log
+  paths:
+    - /var/log/nginx/access*.log
+  json.keys_under_root: true
+  json.overwrite_keys: true
+
+output.kafka:
+  hosts: ["kafka:9092"]
+  topic: weblogs
+  required_acks: 1

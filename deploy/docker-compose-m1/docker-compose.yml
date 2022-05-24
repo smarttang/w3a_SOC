@@ -1,0 +1,187 @@
+version: '2'
+
+services:
+  # 业务端产出日志
+  nginx:
+    image: openresty/openresty:alpine
+    volumes:
+      - ./web/log:/usr/local/openresty/nginx/logs
+      #- ./web/app:/app
+      - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+    ports:
+      - "80:8080"
+
+  # 采集业务端日志到KAFKA
+  filebeat1:
+    image: docker.elastic.co/beats/filebeat:8.1.3
+    entrypoint: "filebeat -e -strict.perms=false"
+    volumes:
+      - ./filebeat-nginx.yml:/usr/share/filebeat/filebeat.yml
+      - ./web/log:/var/log/nginx
+    depends_on: 
+      - nginx
+
+  # kafka & zookeeper
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:3.8
+    ports:
+      - "2181:2181"
+#    volumes:
+#      - "./zookeeper_data:/bitnami"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+  kafka:
+    image: docker.io/bitnami/kafka:3.1
+    ports:
+      - "29092:29092"
+      - "9092:9092"
+#    volumes:
+#      - "./kafka_data:/bitnami"
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      # 对外提供服务,不然会出现no such host!这个是非常贵的教训
+      #- KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      #- KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,PLAINTEXT_HOST://:29092
+      #- KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+    depends_on:
+      - zookeeper
+
+  # 采集KAFKA日志到es
+  filebeat2:
+    image: docker.elastic.co/beats/filebeat:8.1.3
+    entrypoint: "filebeat -e -strict.perms=false"
+    volumes:
+      - ./filebeat-kafka.yml:/usr/share/filebeat/filebeat.yml
+    depends_on:
+      - kafka
+
+  # ES检索
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.1.3-arm64
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    environment:
+      - discovery.type=single-node
+      - xpack.security.http.ssl.enabled=false
+      - xpack.security.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx2g"
+#    volumes:
+#      - './esdata:/bitnami/elasticsearch/data'
+
+  #用于debug用
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.1.3-arm64
+    ports:
+     - '5601:5601'
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+
+  # 分析端
+  w3aAnalysisAgent:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.11
+    environment:
+      - topic=weblogs
+      - kafka=kafka:9092
+      - openapi=w3aworkapi:8080
+      - modes=analyze
+
+  # 告警端
+  w3aAlterAgent:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.11
+    environment:
+      - topic=weblogs
+      - kafka=kafka:9092
+      - openapi=w3aworkapi:8080
+      - modes=alters
+
+  # 资产采集端
+  w3aAssetsAgent:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.11
+    environment:
+      - openapi=w3aworkapi:8080
+      - modes=assets
+
+  # Web前端
+  w3aFrotend:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1.0.11
+    ports:
+     - '81:80'
+    depends_on:
+      - w3aDashboard
+
+  # 平台侧
+  w3aDashboard:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1.0.11
+    ports:
+     - '8081:8080'
+    environment:
+      - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=testw3a
+      - REDIS_HOST=w3aRedis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=5
+      - COS_ACCESSKEY=XXXXX
+      - COS_SECRETKEY=XXXXX
+      - COS_REGIONNAME=XXXXX
+      - COS_BUCKETNAME=XXXXX
+      - COS_BASEURL=https://XXXX.cos.XXXXX.myqcloud.com
+    depends_on:
+      - w3aMysql
+      - w3aRedis
+
+  # workAPI
+  w3aworkapi:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-workapi:v1.0.11
+    ports:
+     - '8082:8080'
+    environment:
+      - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=testw3a
+      - REDIS_HOST=w3aRedis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=4
+    depends_on:
+      - kafka
+    depends_on:
+      - w3aMysql
+      - w3aRedis
+
+  # openAPI
+  w3aopenapi:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1.0.11
+    ports:
+     - '8083:8080'
+    environment:
+      - MYSQL_ADDRESS=jdbc:mysql://w3aMysql:3306/w3a_soc?characterEncoding=utf-8&useSSL=false
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=testw3a
+      - REDIS_HOST=w3aRedis
+      - REDIS_PORT=6379
+      - REDIS_DATABASE=4
+    depends_on:
+      - kafka
+    depends_on:
+      - w3aMysql
+      - w3aRedis
+
+  # mysql
+  w3aMysql:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/mysql:v1
+    volumes:
+     - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+     - '3306:3306'
+    environment:
+     - MYSQL_ROOT_PASSWORD=testw3a
+
+  # redis
+  w3aRedis:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/redis:v1
+    ports:
+     - '6379:6379'
+
