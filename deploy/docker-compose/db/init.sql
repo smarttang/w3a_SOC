@@ -424,6 +424,19 @@ CREATE TABLE `w3_website_service` (
   PRIMARY KEY (`id`,`website_types`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='站点管理.服务配置';
 
+-- ----------------------------
+-- Table structure for w3_webscan_base_config
+-- ----------------------------
+DROP TABLE IF EXISTS `w3_webscan_base_config`;
+CREATE TABLE `w3_webscan_base_config` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `webscan_config_string_info` text COMMENT '配置内容(字符串型)',
+  `webscan_config_type` tinyint(1) DEFAULT '0' COMMENT '配置类型,0:爬取深度,1:扫描并发数,2:扫描请求useragent,3:扫描插件,4:云翻译',
+  `webscan_config_int_info` int(11) DEFAULT '0' COMMENT '配置内容(数字型)',
+  `webscan_config_updatetime` datetime DEFAULT NULL COMMENT '配置创建/更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='web扫描设置';
+
 
 /**
  * 初始化数据
@@ -452,5 +465,14 @@ INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `
 INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (9, '远程命令执行', 2, 0, now(), NULL, 1, 1, 'KD9pKShkZWZpbmV8ZXZhbHxmaWxlX2dldF9jb250ZW50c3xpbmNsdWRlfHJlcXVpcmV8cmVxdWlyZV9vbmNlfHNoZWxsX2V4ZWN8cGhwaW5mb3xzeXN0ZW18cGFzc3RocnV8Y2hhcnxjaHJ8ZXhlY3V0ZXxlY2hvfHByaW50fHByaW50X3J8dmFyX2R1bXB8b3BlbikoLiop');
 INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (10, '弱口令探测', 2, 0, now(), NULL, 1, 1, 'KD9pKShwYXNzd29yZHxwYXNzfHBhc3N3ZHxwd2R8cGR8dXNlcnB3ZHx1c2VycGFzc3x1c2VycGFzc3dkfHVzZXJwYXNzd29yZHxwYXNzX3dvcmR8dXNlcl9wYXNzd29yZHx1c2VyX3Bhc3MpXD0oP2kpKGFkbWlufGFkbWluMTIzfGFkbWluMTIzNDU2fDEyMzQ1NnxhZG1pbjg4OHxhZG1pbjg4ODh8dGVzdHwxMjM0fDEyM3x0ZXN0MTIzKQ==');
 INSERT INTO `w3a_soc`.`w3_web_attack_rules`(`id`, `rules_name`, `rules_level`, `rules_trigger_count`, `rules_createtime`, `rules_updatetime`, `rules_status`, `rules_delete`, `rules_regex`) VALUES (11, 'XSS跨站脚本攻击', 2, 0, now(), NULL, 1, 1, 'XDwoP2kpc2NyaXB0XD4oP2kpYWxlcnRcKCguKilcKVw8XC8oP2kpc2NyaXB0XD4=');
+
+-- ----------------------------
+-- web漏洞扫描
+-- ----------------------------
+INSERT INTO `w3a_soc`.`w3_webscan_base_config`(`id`, `webscan_config_string_info`, `webscan_config_type`, `webscan_config_int_info`, `webscan_config_updatetime`) VALUES (1, 'allowed_methods, backdoors, backup_directories, backup_files, captcha, code_injection, code_injection_php_input_wrapper, code_injection_timing, common_admin_interfaces, common_directories, common_files, cookie_set_for_parent_domain, credit_card, csrf, cvs_svn_users, directory_listing, emails, file_inclusion, form_upload, hsts, htaccess_limit, html_objects, http_only_cookies, http_put, insecure_client_access_policy, insecure_cookies, insecure_cors_policy, insecure_cross_domain_policy_access, insecure_cross_domain_policy_headers, interesting_responses, ldap_injection, localstart_asp, mixed_resource, no_sql_injection, no_sql_injection_differential, origin_spoof_access_restriction_bypass, os_cmd_injection, os_cmd_injection_timing, password_autocomplete, path_traversal, private_ip, response_splitting, rfi, session_fixation, source_code_disclosure, sql_injection, sql_injection_differential, sql_injection_timing, ssn, trainer, unencrypted_password_forms, unvalidated_redirect, unvalidated_redirect_dom, webdav, x_frame_options, xpath_injection, xss, xss_dom, xss_dom_script_context, xss_event, xss_path, xss_script_context, xss_tag, xst, xxe', 3, 0, now());
+INSERT INTO `w3a_soc`.`w3_webscan_base_config`(`id`, `webscan_config_string_info`, `webscan_config_type`, `webscan_config_int_info`, `webscan_config_updatetime`) VALUES (2, NULL, 0, 4, now());
+INSERT INTO `w3a_soc`.`w3_webscan_base_config`(`id`, `webscan_config_string_info`, `webscan_config_type`, `webscan_config_int_info`, `webscan_config_updatetime`) VALUES (3, NULL, 1, 10, now());
+INSERT INTO `w3a_soc`.`w3_webscan_base_config`(`id`, `webscan_config_string_info`, `webscan_config_type`, `webscan_config_int_info`, `webscan_config_updatetime`) VALUES (4, 'Baiduspider+(+http://www.baidu.com/search/spider.htm)', 2, 0, now());
+INSERT INTO `w3a_soc`.`w3_webscan_base_config`(`id`, `webscan_config_string_info`, `webscan_config_type`, `webscan_config_int_info`, `webscan_config_updatetime`) VALUES (5, NULL, 4, 0, now());
 
 SET FOREIGN_KEY_CHECKS = 1;
