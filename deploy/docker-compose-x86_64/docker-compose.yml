@@ -58,7 +58,7 @@ services:
 
   # ES检索
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.1.3-arm64
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.1.3
     ports:
       - '9200:9200'
       - '9300:9300'
