@@ -96,7 +96,7 @@ services:
 
   # 分析端
   w3aAnalysisAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
     environment:
       - topic=weblogs
       - kafka=kafka:9092
@@ -105,7 +105,7 @@ services:
 
   # 告警端
   w3aAlterAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
     environment:
       - topic=weblogs
       - kafka=kafka:9092
@@ -114,14 +114,14 @@ services:
 
   # 资产采集端
   w3aAssetsAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
     environment:
       - openapi=w3aworkapi:8080
       - modes=assets
 
   # 漏洞扫描联动端
   w3aWebScanAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
     environment:
       - redis=w3aRedis:6379
       - arachni=w3aArachni:7331
@@ -139,15 +139,23 @@ services:
 
   # 代码扫描端
   w3aCodeScanAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
     environment:
       - openapi=w3aworkapi:8080
       - modes=codescan
       - redis=w3aRedis:6379
+      
+  # NIDS数据分析
+  w3aNidsAgent:
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
+    environment:
+      - openapi=w3aworkapi:8080
+      - modes=nids
+      - topic=nidslogs
 
   # Web前端
   w3aFrotend:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1.0.14
     ports:
      - '81:80'
     depends_on:
@@ -155,7 +163,7 @@ services:
 
   # 平台侧
   w3aDashboard:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1.0.14
     ports:
      - '8081:8080'
     environment:
@@ -176,7 +184,7 @@ services:
 
   # workAPI
   w3aworkapi:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-workapi:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-workapi:v1.0.14
     ports:
      - '8082:8080'
     environment:
@@ -194,7 +202,7 @@ services:
 
   # openAPI
   w3aopenapi:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1.0.13
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1.0.14
     ports:
      - '8083:8080'
     environment:
