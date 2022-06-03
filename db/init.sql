@@ -14,9 +14,6 @@ USE w3a_soc;
  Date: 13/05/2022 02:38:41
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
-
 -- ----------------------------
 -- Table structure for w3_alter_channel
 -- ----------------------------
@@ -105,7 +102,7 @@ CREATE TABLE `w3_apps_website` (
   `apps_status` tinyint(1) DEFAULT '1' COMMENT '关联状态,0:取消,1:启用',
   `apps_errormsg` varchar(255) DEFAULT NULL COMMENT '异常原因',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='应用和站点关联配置表';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='应用和站点关联配置表';
 
 -- ----------------------------
 -- Table structure for w3_clouds_assets
@@ -165,7 +162,7 @@ CREATE TABLE `w3_git_api_analyze` (
   `git_store_commit_apibase` char(32) NOT NULL COMMENT '主目录',
   `git_store_commit_apichild` char(32) DEFAULT NULL COMMENT '子目录',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='git的接口分析';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='git的接口分析';
 
 -- ----------------------------
 -- Table structure for w3_git_commits
@@ -177,7 +174,7 @@ CREATE TABLE `w3_git_commits` (
   `git_store_service_commitid` char(50) NOT NULL COMMENT 'git的commitID',
   `git_store_commit_createtime` datetime NOT NULL COMMENT '入库时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='git的commit记录';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='git的commit记录';
 
 -- ----------------------------
 -- Table structure for w3_git_component_analyze
@@ -193,7 +190,7 @@ CREATE TABLE `w3_git_component_analyze` (
   `git_store_commit_component_version` char(32) DEFAULT NULL COMMENT '版本号',
   `git_store_commit_component_count` bigint(20) DEFAULT NULL COMMENT '统计数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='git的组件调用分析';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='git的组件调用分析';
 
 -- ----------------------------
 -- Table structure for w3_git_lang_counts
@@ -208,7 +205,7 @@ CREATE TABLE `w3_git_lang_counts` (
   `git_store_commit_lang_code_count` bigint(20) NOT NULL COMMENT '代码行数',
   `git_store_commit_lang_file_count` bigint(20) NOT NULL COMMENT '文件数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='git的组成分析';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='git的组成分析';
 
 -- ----------------------------
 -- Table structure for w3_gitstore_assets
@@ -248,6 +245,27 @@ CREATE TABLE `w3_gitstore_config` (
   `git_store_errormsg` varchar(255) DEFAULT NULL COMMENT '异常原因',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='git配置';
+
+-- ----------------------------
+-- Table structure for w3_ids_attacks
+-- ----------------------------
+DROP TABLE IF EXISTS `w3_ids_attacks`;
+CREATE TABLE `w3_ids_attacks` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `ids_actions` varchar(255) NOT NULL COMMENT '策略动作',
+  `ids_app_proto` varchar(50) NOT NULL COMMENT '请求应用协议',
+  `ids_app_category` varchar(255) NOT NULL COMMENT '攻击类别',
+  `ids_app_destip` varchar(32) NOT NULL COMMENT '目的IP',
+  `ids_app_srcip` varchar(32) NOT NULL COMMENT '源IP',
+  `ids_app_destport` varchar(32) NOT NULL COMMENT '目的端口',
+  `ids_proto` varchar(32) NOT NULL COMMENT '协议类型',
+  `ids_req_time` datetime NOT NULL COMMENT '请求时间',
+  `ids_severity` int(11) NOT NULL COMMENT '威胁等级',
+  `ids_signature` varchar(255) NOT NULL COMMENT '威胁类型',
+  `ids_app_srcport` varchar(32) NOT NULL COMMENT '源端口',
+  `ids_createtime` datetime NOT NULL COMMENT '入库时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='IDS攻击记录';
 
 -- ----------------------------
 -- Table structure for w3_kubernetes_assets
@@ -344,7 +362,7 @@ CREATE TABLE `w3_statistics` (
 -- ----------------------------
 DROP TABLE IF EXISTS `w3_users`;
 CREATE TABLE `w3_users` (
-  `user_id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `user_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `user_name` varchar(25) NOT NULL COMMENT '用户名',
   `user_password` char(32) NOT NULL COMMENT '密码',
   `user_createtime` datetime NOT NULL COMMENT '创建时间',
@@ -365,7 +383,7 @@ CREATE TABLE `w3_vuls_circulation` (
   `vul_dispose_status` tinyint(1) DEFAULT '0' COMMENT '处置状态,0:待处理,1:解决中,2:误报忽略,3:已解决,4:白名单,5:无效单,6:修改',
   `vul_circulation_info` varchar(255) DEFAULT '暂无' COMMENT '流转信息',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='漏洞管理.流转单';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='漏洞管理.流转单';
 
 -- ----------------------------
 -- Table structure for w3_vuls_service
@@ -392,7 +410,7 @@ CREATE TABLE `w3_vuls_service` (
   `vul_uuid` bigint(20) DEFAULT '0' COMMENT '漏洞创建人，如果是工具，默认为0',
   `vul_hosts` bigint(20) NOT NULL COMMENT '漏洞归属站点的ID',
   PRIMARY KEY (`id`,`vul_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='漏洞管理';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='漏洞管理';
 
 -- ----------------------------
 -- Table structure for w3_vuls_tags
@@ -402,7 +420,20 @@ CREATE TABLE `w3_vuls_tags` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `vul_tags` varchar(30) NOT NULL COMMENT '漏洞标签',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='漏洞管理.风险标签';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='漏洞管理.风险标签';
+
+-- ----------------------------
+-- Table structure for w3_water_targes
+-- ----------------------------
+DROP TABLE IF EXISTS `w3_water_targes`;
+CREATE TABLE `w3_water_targes` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `apps_website_id` bigint(20) NOT NULL COMMENT '站点ID',
+  `apps_water_types` char(50) NOT NULL COMMENT '水位类型',
+  `apps_water_counts` int(11) NOT NULL COMMENT '水位数字',
+  `apps_water_updatetime` datetime NOT NULL COMMENT '水位更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='站点水位设定';
 
 -- ----------------------------
 -- Table structure for w3_web_attack_rules
@@ -514,15 +545,8 @@ CREATE TABLE `w3_website_service` (
   PRIMARY KEY (`id`,`website_types`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='站点管理.服务配置';
 
-CREATE TABLE `w3_water_targes`
-(
-    `id`                    bigint   NOT NULL auto_increment COMMENT 'id',
-    `apps_website_id`       bigint   NOT NULL COMMENT '站点ID',
-    `apps_water_types`      char(50) NOT NULL COMMENT '水位类型',
-    `apps_water_counts`     int      NOT NULL COMMENT '水位数字',
-    `apps_water_updatetime` datetime NOT NULL COMMENT '水位更新时间',
-    primary key (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='站点水位设定';
+SET FOREIGN_KEY_CHECKS = 1;
+
 
 /**
  * 初始化数据

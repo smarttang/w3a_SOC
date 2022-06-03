@@ -1,0 +1,155 @@
+31/5/2022 -- 14:26:17 - <Notice> - This is Suricata version 6.0.4 RELEASE running in SYSTEM mode
+31/5/2022 -- 14:26:17 - <Info> - CPUs/cores online: 4
+31/5/2022 -- 14:26:17 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 14:26:17 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 14:26:17 - <Info> - dropped the caps for main thread
+31/5/2022 -- 14:26:17 - <Info> - fast output device (regular) initialized: fast.log
+31/5/2022 -- 14:26:17 - <Info> - eve-log output device (regular) initialized: eve.json
+31/5/2022 -- 14:26:17 - <Info> - stats output device (regular) initialized: stats.log
+31/5/2022 -- 14:26:17 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 14:26:55 - <Info> - 1 rule files processed. 24568 rules successfully loaded, 0 rules failed
+31/5/2022 -- 14:26:55 - <Info> - Threshold config parsed: 0 rule(s) found
+31/5/2022 -- 14:26:55 - <Info> - 24571 signatures processed. 1348 are IP-only rules, 4100 are inspecting packet payload, 18919 inspect application layer, 108 are decoder event only
+31/5/2022 -- 14:28:20 - <Error> - [ERRCODE: SC_ERR_INVALID_VALUE(130)] - fanout not supported by kernel: Kernel too old or cluster-id 99 already in use.
+31/5/2022 -- 14:28:20 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 14:28:20 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 14:28:20 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 14:28:20 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 14:28:20 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 14:28:20 - <Info> - Going to use 1 thread(s)
+31/5/2022 -- 14:28:21 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 14:28:21 - <Info> - Using unix socket file '/var/run/suricata/suricata-command.socket'
+31/5/2022 -- 14:28:21 - <Notice> - all 1 packet processing threads, 4 management threads initialized, engine started.
+31/5/2022 -- 14:28:21 - <Error> - [ERRCODE: SC_ERR_AFP_CREATE(190)] - Couldn't switch iface eth0 to promiscuous, error Protocol not available
+31/5/2022 -- 14:28:21 - <Error> - [ERRCODE: SC_ERR_AFP_CREATE(190)] - Couldn't init AF_PACKET socket, fatal error
+31/5/2022 -- 14:28:21 - <Error> - [ERRCODE: SC_ERR_FATAL(171)] - thread W#01-eth0 failed
+31/5/2022 -- 15:04:41 - <Notice> - This is Suricata version 6.0.4 RELEASE running in SYSTEM mode
+31/5/2022 -- 15:04:41 - <Info> - CPUs/cores online: 4
+31/5/2022 -- 15:04:41 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get MTU via ioctl for 'en0': No such device (19)
+31/5/2022 -- 15:04:41 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get MTU via ioctl for 'en0': No such device (19)
+31/5/2022 -- 15:04:41 - <Info> - dropped the caps for main thread
+31/5/2022 -- 15:04:41 - <Info> - fast output device (regular) initialized: fast.log
+31/5/2022 -- 15:04:41 - <Info> - eve-log output device (regular) initialized: eve.json
+31/5/2022 -- 15:04:41 - <Info> - stats output device (regular) initialized: stats.log
+31/5/2022 -- 15:04:41 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:05:20 - <Info> - 1 rule files processed. 24568 rules successfully loaded, 0 rules failed
+31/5/2022 -- 15:05:20 - <Info> - Threshold config parsed: 0 rule(s) found
+31/5/2022 -- 15:05:20 - <Info> - 24571 signatures processed. 1348 are IP-only rules, 4100 are inspecting packet payload, 18919 inspect application layer, 108 are decoder event only
+31/5/2022 -- 15:06:18 - <Notice> - This is Suricata version 6.0.4 RELEASE running in SYSTEM mode
+31/5/2022 -- 15:06:18 - <Info> - CPUs/cores online: 4
+31/5/2022 -- 15:06:19 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 15:06:19 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 15:06:19 - <Info> - dropped the caps for main thread
+31/5/2022 -- 15:06:19 - <Info> - fast output device (regular) initialized: fast.log
+31/5/2022 -- 15:06:19 - <Info> - eve-log output device (regular) initialized: eve.json
+31/5/2022 -- 15:06:19 - <Info> - stats output device (regular) initialized: stats.log
+31/5/2022 -- 15:06:19 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:06:58 - <Info> - 1 rule files processed. 24568 rules successfully loaded, 0 rules failed
+31/5/2022 -- 15:06:58 - <Info> - Threshold config parsed: 0 rule(s) found
+31/5/2022 -- 15:06:58 - <Info> - 24571 signatures processed. 1348 are IP-only rules, 4100 are inspecting packet payload, 18919 inspect application layer, 108 are decoder event only
+31/5/2022 -- 15:08:21 - <Error> - [ERRCODE: SC_ERR_INVALID_VALUE(130)] - fanout not supported by kernel: Kernel too old or cluster-id 99 already in use.
+31/5/2022 -- 15:08:21 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:08:21 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:08:21 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:08:21 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:08:21 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:08:21 - <Info> - Going to use 1 thread(s)
+31/5/2022 -- 15:08:21 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:08:21 - <Info> - Using unix socket file '/var/run/suricata/suricata-command.socket'
+31/5/2022 -- 15:08:21 - <Notice> - all 1 packet processing threads, 4 management threads initialized, engine started.
+31/5/2022 -- 15:08:21 - <Error> - [ERRCODE: SC_ERR_AFP_CREATE(190)] - Couldn't switch iface eth0 to promiscuous, error Protocol not available
+31/5/2022 -- 15:08:21 - <Error> - [ERRCODE: SC_ERR_AFP_CREATE(190)] - Couldn't init AF_PACKET socket, fatal error
+31/5/2022 -- 15:08:21 - <Error> - [ERRCODE: SC_ERR_FATAL(171)] - thread W#01-eth0 failed
+31/5/2022 -- 15:11:40 - <Notice> - This is Suricata version 6.0.4 RELEASE running in SYSTEM mode
+31/5/2022 -- 15:11:40 - <Info> - CPUs/cores online: 4
+31/5/2022 -- 15:11:40 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 15:11:40 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 15:11:40 - <Info> - dropped the caps for main thread
+31/5/2022 -- 15:11:40 - <Info> - fast output device (regular) initialized: fast.log
+31/5/2022 -- 15:11:40 - <Info> - eve-log output device (regular) initialized: eve.json
+31/5/2022 -- 15:11:40 - <Info> - stats output device (regular) initialized: stats.log
+31/5/2022 -- 15:11:40 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:12:19 - <Info> - 1 rule files processed. 24568 rules successfully loaded, 0 rules failed
+31/5/2022 -- 15:12:19 - <Info> - Threshold config parsed: 0 rule(s) found
+31/5/2022 -- 15:12:20 - <Info> - 24571 signatures processed. 1348 are IP-only rules, 4100 are inspecting packet payload, 18919 inspect application layer, 108 are decoder event only
+31/5/2022 -- 15:13:42 - <Error> - [ERRCODE: SC_ERR_INVALID_VALUE(130)] - fanout not supported by kernel: Kernel too old or cluster-id 99 already in use.
+31/5/2022 -- 15:13:42 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:13:42 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:13:42 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:13:42 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:13:42 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:13:42 - <Info> - Going to use 1 thread(s)
+31/5/2022 -- 15:13:42 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:13:42 - <Info> - Using unix socket file '/var/run/suricata/suricata-command.socket'
+31/5/2022 -- 15:13:42 - <Notice> - all 1 packet processing threads, 4 management threads initialized, engine started.
+31/5/2022 -- 15:13:42 - <Error> - [ERRCODE: SC_ERR_AFP_CREATE(190)] - Couldn't switch iface eth0 to promiscuous, error Protocol not available
+31/5/2022 -- 15:13:42 - <Error> - [ERRCODE: SC_ERR_AFP_CREATE(190)] - Couldn't init AF_PACKET socket, fatal error
+31/5/2022 -- 15:13:42 - <Error> - [ERRCODE: SC_ERR_FATAL(171)] - thread W#01-eth0 failed
+31/5/2022 -- 15:14:55 - <Notice> - This is Suricata version 6.0.4 RELEASE running in SYSTEM mode
+31/5/2022 -- 15:14:55 - <Info> - CPUs/cores online: 4
+31/5/2022 -- 15:14:56 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 15:14:56 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 15:14:56 - <Info> - dropped the caps for main thread
+31/5/2022 -- 15:14:56 - <Info> - fast output device (regular) initialized: fast.log
+31/5/2022 -- 15:14:56 - <Info> - eve-log output device (regular) initialized: eve.json
+31/5/2022 -- 15:14:56 - <Info> - stats output device (regular) initialized: stats.log
+31/5/2022 -- 15:14:56 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:15:34 - <Info> - 1 rule files processed. 24568 rules successfully loaded, 0 rules failed
+31/5/2022 -- 15:15:34 - <Info> - Threshold config parsed: 0 rule(s) found
+31/5/2022 -- 15:15:35 - <Info> - 24571 signatures processed. 1348 are IP-only rules, 4100 are inspecting packet payload, 18919 inspect application layer, 108 are decoder event only
+31/5/2022 -- 15:16:58 - <Error> - [ERRCODE: SC_ERR_INVALID_VALUE(130)] - fanout not supported by kernel: Kernel too old or cluster-id 99 already in use.
+31/5/2022 -- 15:16:58 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:16:58 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:16:58 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:16:58 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:16:58 - <Warning> - [ERRCODE: SC_ERR_SYSCALL(50)] - Failure when trying to get feature via ioctl for 'eth0': Function not implemented (38)
+31/5/2022 -- 15:16:58 - <Info> - Going to use 1 thread(s)
+31/5/2022 -- 15:16:58 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:16:58 - <Info> - Using unix socket file '/var/run/suricata/suricata-command.socket'
+31/5/2022 -- 15:16:58 - <Notice> - all 1 packet processing threads, 4 management threads initialized, engine started.
+31/5/2022 -- 15:16:58 - <Error> - [ERRCODE: SC_ERR_AFP_CREATE(190)] - Couldn't switch iface eth0 to promiscuous, error Protocol not available
+31/5/2022 -- 15:16:58 - <Error> - [ERRCODE: SC_ERR_AFP_CREATE(190)] - Couldn't init AF_PACKET socket, fatal error
+31/5/2022 -- 15:16:58 - <Error> - [ERRCODE: SC_ERR_FATAL(171)] - thread W#01-eth0 failed
+31/5/2022 -- 15:25:55 - <Notice> - This is Suricata version 6.0.5 RELEASE running in SYSTEM mode
+31/5/2022 -- 15:25:55 - <Info> - CPUs/cores online: 4
+31/5/2022 -- 15:25:55 - <Warning> - [ERRCODE: SC_ERR_CONF_YAML_ERROR(242)] - App-Layer protocol sip enable status not set, so enabling by default. This behavior will change in Suricata 7, so please update your config. See ticket #4744 for more details.
+31/5/2022 -- 15:25:55 - <Warning> - [ERRCODE: SC_ERR_CONF_YAML_ERROR(242)] - App-Layer protocol mqtt enable status not set, so enabling by default. This behavior will change in Suricata 7, so please update your config. See ticket #4744 for more details.
+31/5/2022 -- 15:25:55 - <Warning> - [ERRCODE: SC_ERR_CONF_YAML_ERROR(242)] - App-Layer protocol rdp enable status not set, so enabling by default. This behavior will change in Suricata 7, so please update your config. See ticket #4744 for more details.
+31/5/2022 -- 15:25:55 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 15:25:55 - <Info> - Found an MTU of 1500 for 'eth0'
+31/5/2022 -- 15:25:55 - <Info> - fast output device (regular) initialized: fast.log
+31/5/2022 -- 15:25:55 - <Info> - eve-log output device (regular) initialized: eve.json
+31/5/2022 -- 15:25:55 - <Info> - stats output device (regular) initialized: stats.log
+31/5/2022 -- 15:25:55 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:25:56 - <Info> - 1 rule files processed. 25762 rules successfully loaded, 0 rules failed
+31/5/2022 -- 15:25:56 - <Info> - Threshold config parsed: 0 rule(s) found
+31/5/2022 -- 15:25:56 - <Info> - 25765 signatures processed. 1256 are IP-only rules, 4112 are inspecting packet payload, 20193 inspect application layer, 108 are decoder event only
+31/5/2022 -- 15:26:09 - <Info> - Going to use 4 thread(s)
+31/5/2022 -- 15:26:09 - <Info> - Running in live mode, activating unix socket
+31/5/2022 -- 15:26:09 - <Info> - Using unix socket file '/var/run/suricata/suricata-command.socket'
+31/5/2022 -- 15:26:09 - <Notice> - all 4 packet processing threads, 4 management threads initialized, engine started.
+31/5/2022 -- 15:26:09 - <Info> - All AFP capture threads are running.
+31/5/2022 -- 17:19:12 - <Notice> - Signal Received.  Stopping engine.
+31/5/2022 -- 17:19:12 - <Info> - time elapsed 6783.399s
+31/5/2022 -- 17:19:12 - <Info> - Alerts: 6
+31/5/2022 -- 17:19:13 - <Info> - cleaning up signature grouping structure... complete
+31/5/2022 -- 17:19:13 - <Notice> - Stats for 'eth0':  pkts: 1734938, drop: 260668 (15.02%), invalid chksum: 0
+1/6/2022 -- 00:54:52 - <Notice> - This is Suricata version 6.0.5 RELEASE running in SYSTEM mode
+1/6/2022 -- 00:54:52 - <Info> - CPUs/cores online: 4
+1/6/2022 -- 00:54:52 - <Warning> - [ERRCODE: SC_ERR_CONF_YAML_ERROR(242)] - App-Layer protocol sip enable status not set, so enabling by default. This behavior will change in Suricata 7, so please update your config. See ticket #4744 for more details.
+1/6/2022 -- 00:54:52 - <Warning> - [ERRCODE: SC_ERR_CONF_YAML_ERROR(242)] - App-Layer protocol mqtt enable status not set, so enabling by default. This behavior will change in Suricata 7, so please update your config. See ticket #4744 for more details.
+1/6/2022 -- 00:54:52 - <Warning> - [ERRCODE: SC_ERR_CONF_YAML_ERROR(242)] - App-Layer protocol rdp enable status not set, so enabling by default. This behavior will change in Suricata 7, so please update your config. See ticket #4744 for more details.
+1/6/2022 -- 00:54:52 - <Info> - Found an MTU of 1500 for 'eth0'
+1/6/2022 -- 00:54:52 - <Info> - Found an MTU of 1500 for 'eth0'
+1/6/2022 -- 00:54:52 - <Info> - fast output device (regular) initialized: fast.log
+1/6/2022 -- 00:54:52 - <Info> - eve-log output device (regular) initialized: eve.json
+1/6/2022 -- 00:54:52 - <Info> - stats output device (regular) initialized: stats.log
+1/6/2022 -- 00:54:52 - <Info> - Running in live mode, activating unix socket
+1/6/2022 -- 00:54:53 - <Info> - 1 rule files processed. 25762 rules successfully loaded, 0 rules failed
+1/6/2022 -- 00:54:53 - <Info> - Threshold config parsed: 0 rule(s) found
+1/6/2022 -- 00:54:53 - <Info> - 25765 signatures processed. 1256 are IP-only rules, 4112 are inspecting packet payload, 20193 inspect application layer, 108 are decoder event only
+1/6/2022 -- 00:55:07 - <Info> - Going to use 4 thread(s)
+1/6/2022 -- 00:55:07 - <Info> - Running in live mode, activating unix socket
+1/6/2022 -- 00:55:07 - <Info> - Using unix socket file '/var/run/suricata/suricata-command.socket'
+1/6/2022 -- 00:55:07 - <Notice> - all 4 packet processing threads, 4 management threads initialized, engine started.
+1/6/2022 -- 00:55:07 - <Info> - All AFP capture threads are running.
