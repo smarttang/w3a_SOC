@@ -545,6 +545,15 @@ CREATE TABLE `w3_website_service` (
   PRIMARY KEY (`id`,`website_types`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='站点管理.服务配置';
 
+ALTER table w3_users ADD user_type tinyint(1) DEFAULT 1 COMMENT '用户类型,1:普通用户,2:LDAP用户';
+CREATE TABLE `w3_sys_config` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `sys_config_type` varchar(255) NOT NULL COMMENT '配置类型',
+  `sys_config_info` varchar(255) NOT NULL COMMENT '配置内容',
+  `sys_config_updatetime` datetime NOT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='配置信息记录';
+
 SET FOREIGN_KEY_CHECKS = 1;
 
 
