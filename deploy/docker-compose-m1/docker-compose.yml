@@ -44,6 +44,16 @@ services:
     depends_on: 
       - nginx
 
+  # LDAP
+  ldaps:
+    image: osixia/openldap:1.5.0
+    environment:
+      - LDAP_ORGANISATION=w3asoc
+      - LDAP_DOMAIN=aidolphins.com
+      - LDAP_ADMIN_PASSWORD=w3adminLdap
+    ports:
+      - "389:389"
+
   # kafka & zookeeper
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.8
@@ -96,7 +106,11 @@ services:
 
   # 分析端
   w3aAnalysisAgent:
+<<<<<<< HEAD
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.15-m1
+=======
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
+>>>>>>> 0651df27fbda11f47c66b78461481bf2a7a16192
     environment:
       - topic=weblogs
       - kafka=kafka:9092
@@ -105,7 +119,11 @@ services:
 
   # 告警端
   w3aAlterAgent:
+<<<<<<< HEAD
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.15-m1
+=======
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
+>>>>>>> 0651df27fbda11f47c66b78461481bf2a7a16192
     environment:
       - topic=weblogs
       - kafka=kafka:9092
@@ -114,14 +132,22 @@ services:
 
   # 资产采集端
   w3aAssetsAgent:
+<<<<<<< HEAD
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.15-m1
+=======
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
+>>>>>>> 0651df27fbda11f47c66b78461481bf2a7a16192
     environment:
       - openapi=w3aworkapi:8080
       - modes=assets
 
   # 代码扫描端
   w3aCodeScanAgent:
+<<<<<<< HEAD
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.15-m1
+=======
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
+>>>>>>> 0651df27fbda11f47c66b78461481bf2a7a16192
     environment:
       - openapi=w3aworkapi:8080
       - modes=codescan
@@ -129,7 +155,7 @@ services:
 
   # NIDS数据分析
   w3aNidsAgent:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.14
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-agent:v1.0.15-m1
     environment:
       - openapi=w3aworkapi:8080
       - modes=nids
@@ -137,7 +163,11 @@ services:
 
   # Web前端
   w3aFrotend:
+<<<<<<< HEAD
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1.0.15-m1
+=======
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-frontend:v1.0.14
+>>>>>>> 0651df27fbda11f47c66b78461481bf2a7a16192
     ports:
      - '81:80'
     depends_on:
@@ -145,7 +175,11 @@ services:
 
   # 平台侧
   w3aDashboard:
+<<<<<<< HEAD
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1.0.15-m1
+=======
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-dashboard:v1.0.14
+>>>>>>> 0651df27fbda11f47c66b78461481bf2a7a16192
     ports:
      - '8081:8080'
     environment:
@@ -166,7 +200,7 @@ services:
 
   # workAPI
   w3aworkapi:
-    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-workapi:v1.0.14
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-workapi:v1.0.15-m1
     ports:
      - '8082:8080'
     environment:
@@ -184,7 +218,11 @@ services:
 
   # openAPI
   w3aopenapi:
+<<<<<<< HEAD
+    image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1.0.15-m1
+=======
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/w3a-openapi:v1.0.14
+>>>>>>> 0651df27fbda11f47c66b78461481bf2a7a16192
     ports:
      - '8083:8080'
     environment:
@@ -215,4 +253,3 @@ services:
     image: registry.cn-beijing.aliyuncs.com/aidolphins_com/redis:v1
     ports:
      - '6379:6379'
-
