@@ -1,5 +1,3 @@
-# 因为JAVA包体积太大，导致部署不方便，现在基于Golang在重写整个Web端，预计需要几天。
-
 <p align="center"><img style="width:660px" title="Run example" alt="Run example" src="/WechatIMG204 .png"></p>
 
 <p align="center">
